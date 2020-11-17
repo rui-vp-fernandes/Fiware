@@ -2,7 +2,7 @@
 
 
 -  `isOwnedBy`: Identifies Person/Fitbit account
-   -  Attribute type: **Relationship**. [Person](http://schema.org/Person) or [Organization](https://schema.org/Organization)
+   -  Attribute type: **Relationship**. [Person](http://schema.org/Person)
    -  Optional
 -  `description`: A description of the item
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
@@ -131,35 +131,19 @@ interactionStatistic  InteractionCounter  The number of interactions for the Cre
    -  Normative References: http://purl.org/dc/elements/1.1/description
 -  `dyspnoea`: Indication if the Person has dyspnoea
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Optional
+   -  Required
 -  `cough`: Indication if the Person has been coughing
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Optional
+   -  Required
 -  `anosmia`: Indication if the Person has anosmia
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Optional
+   -  Required
 -  `contactCovid`: Indication if the Person has dyspnoea
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Optional
+   -  Required
 -  `diarrhea`: Indication of the number of times a Person suffered from diarrhea throughout the day
    -  Attribute type: **Property**. [Integer](https://schema.org/Integer)
-   -  Optional
--  `occupier`: Link to the occupiers of the building
-   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
-   -  Optional
--  `openingHours`: 
-   -  Attribute type: **Property**. [openingHours](https://schema.org/openingHours)
-   -  Optional
-   -  Normative References: https://schema.org/openingHours
--  `owner`: The owner of this building
-   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
-   -  Optional
--  `refMap`: The URL holding a map of the building
-   -  Attribute type: **Property**. [URL](https://schema.org/URL)
-   -  Optional
--  `source`: A sequence of characters giving the source of the entity data.
-   -  Attribute type: **Property**. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
-   -  Optional
+   -  Required
 
 
 
