@@ -1,0 +1,65 @@
+--- 
+properties: &commonMeta 
+    observedAt:
+        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/observedAt"
+    unitCode:
+        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/unitCode"
+
+
+App: 
+  allOf: 
+    - 
+      $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/Common"
+  description: |
+      This entity contains a harmonised description of the SMACovid App.
+      
+      ## Data Model
+      For a full description of the following attributes refer to GSMA [IoT Big Data Harmonised Data Model](https://github.com/GSMADeveloper/NGSI-LD-Entities)
+  properties: 
+    isOwnedBy: 
+      description: "Identifies Person/Fitbit account"
+      type: string
+      x-ngsi: 
+        model: 
+          - "http://schema.org/Person"
+        type: Relationship
+    description: 
+      $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/description"
+    dyspnoea: 
+      description: "Indication if the Person has dyspnoea"
+      type: boolean
+      x-ngsi: 
+        model: "https://schema.org/Boolean"
+        type: Property
+    cough: 
+      description: "Indication if the Person has been coughing"
+      type: boolean
+      x-ngsi: 
+        model: "https://schema.org/Boolean"
+        type: Property
+    anosmia: 
+      description: "Indication if the Person has anosmia"
+      type: boolean
+      x-ngsi: 
+        model: "https://schema.org/Boolean"
+        type: Property
+    contactCovid: 
+      description: "Indication if the Person has dyspnoea"
+      type: boolean
+      x-ngsi: 
+        model: "https://schema.org/Boolean"
+        type: Property
+    diarrhea: 
+      description: "Indication of the number of times a Person suffered from diarrhea throughout the day "
+      format: int32
+      type: integer
+      x-ngsi: 
+        model: "https://schema.org/Integer"
+        type: Property
+  required: 
+    - dyspnoea
+    - cough
+    - anosmia
+    - contactCovid
+    - diarrhea
+  type: object
