@@ -24,7 +24,6 @@ Wearable:
       x-ngsi: 
         model: 
           - "http://schema.org/Person"
-          - "https://schema.org/Organization"
         type: Relationship
     description: 
       $ref: "./ngsi-ld.yaml#/description"
