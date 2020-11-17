@@ -1,0 +1,68 @@
+--- 
+properties: &commonMeta 
+    providedBy:
+        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/providedBy"
+    observedAt:
+        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/observedAt"
+    unitCode:
+        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/unitCode"
+
+
+Wearable: 
+  allOf: 
+    - 
+      $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/Common"
+  description: |
+      This entity contains a harmonised description of a Wearable. This entity is associated with the vertical segments of smart homes, smart cities, industry and related IoT applications.
+      
+      ## Data Model
+      For a full description of the following attributes refer to GSMA [IoT Big Data Harmonised Data Model](https://github.com/GSMADeveloper/NGSI-LD-Entities)
+  properties: 
+    isOwnedBy: 
+      description: "Identifies Person/Fitbit account"
+      type: string
+      x-ngsi: 
+        model: 
+          - "http://schema.org/Person"
+          - "https://schema.org/Organization"
+        type: Relationship
+    description: 
+      $ref: "./ngsi-ld.yaml#/description"
+    bloodPressure: 
+      description: "Blood Pressure"
+      format: int32
+      type: integer
+      x-ngsi: 
+        model: "https://schema.org/Integer"
+        type: Property
+        properties: *commonMeta
+    oxygenSaturation: 
+      description: "Oxygen Saturation"
+      format: float
+      type: number
+      x-ngsi: 
+        model: "https://schema.org/Number"
+        type: Property
+        properties: *commonMeta
+    temperature: 
+      description: "temperature"
+      format: float
+      type: number
+      x-ngsi: 
+        model: "https://schema.org/Number"
+        type: Property
+        properties: *commonMeta
+    heartRate: 
+      description: "Heart rate of of the Person being measured"
+      format: int32
+      type: integer
+      x-ngsi: 
+        model: "https://schema.org/Integer"
+        type: Property
+        properties: *commonMeta
+  required: 
+    - bloodPressure
+    - oxygenSaturation
+    - temperature
+    - heartRate
+  type: object
