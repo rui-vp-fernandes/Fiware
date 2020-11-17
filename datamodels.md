@@ -114,7 +114,10 @@ interactionStatistic  InteractionCounter  The number of interactions for the Cre
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
 -  `ownsAccount`: Identifies Person/Fitbit account
-   -  Attribute type: **Relationship**. [Person](http://schema.org/Person) or [Organization](https://schema.org/Organization)
+   -  Attribute type: **Relationship**. [URL](http://schema.org/URL)
+   -  Optional
+-  `hasApp`: Identifies Person/Fitbit account
+   -  Attribute type: **Relationship**. [Person](http://schema.org/Person)
    -  Optional
 
 
@@ -122,7 +125,7 @@ interactionStatistic  InteractionCounter  The number of interactions for the Cre
 # App
 
 
--  `isOwnedBy`: Identifies Person/Fitbit account
+-  `hasInfoAbout`: Identifies Person/Fitbit account
    -  Attribute type: **Relationship**. [Person](http://schema.org/Person)
    -  Optional
 -  `description`: A description of the item
