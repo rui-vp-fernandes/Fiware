@@ -1,15 +1,17 @@
 --- 
 properties: &commonMeta 
+    providedBy:
+        $ref: "ngsi-ld.yaml#/providedBy"
     observedAt:
-        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/observedAt"
+        $ref: "ngsi-ld.yaml#/observedAt"
     unitCode:
-        $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/unitCode"
+        $ref: "ngsi-ld.yaml#/unitCode"
 
 
 App: 
   allOf: 
     - 
-      $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/Common"
+      $ref: "./ngsi-ld.yaml#/Common"
   description: |
       This entity contains a harmonised description of the SMACovid App.
       
@@ -22,44 +24,90 @@ App:
       x-ngsi: 
         model: 
           - "http://schema.org/Person"
+          - "https://schema.org/Organization"
         type: Relationship
     description: 
-      $ref: "https://raw.githubusercontent.com/rui-vp-fernandes/Fiware/main/ngsi-ld.yaml#/description"
-    dyspnoea: 
-      description: "Indication if the Person has dyspnoea"
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-    cough: 
-      description: "Indication if the Person has been coughing"
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-    anosmia: 
-      description: "Indication if the Person has anosmia"
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-    contactCovid: 
-      description: "Indication if the Person has dyspnoea"
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-    diarrhea: 
-      description: "Indication of the number of times a Person suffered from diarrhea throughout the day "
+      $ref: "./ngsi-ld.yaml#/description"
+    bloodPressure: 
+      description: "blood Pressure"
       format: int32
       type: integer
       x-ngsi: 
         model: "https://schema.org/Integer"
         type: Property
+    oxygenSaturation: 
+      description: "Oxygen Saturation"
+      format: float
+      type: number
+      x-ngsi: 
+        model: "https://schema.org/Number"
+        type: Property
+    temperature: 
+      description: "temperature"
+      format: float
+      type: number
+      x-ngsi: 
+        model: "https://schema.org/Number"
+        type: Property
+        properties: *commonMeta
+    floorsBelowGround: 
+      description: "Number of floors below ground within the building"
+      format: int32
+      type: integer
+      x-ngsi: 
+        model: "https://schema.org/Integer"
+        type: Property
+    location: 
+      $ref: "./ngsi-ld.yaml#/location"
+    occupier: 
+      description: "Link to the occupiers of the building"
+      format: URL
+      type: string
+      x-ngsi: 
+        model: "https://schema.org/URL"
+        type: Relationship
+    openingHours: 
+      externalDocs: 
+        url: "https://schema.org/openingHours"
+      items: 
+        properties: 
+          type: 
+            type: string
+          values: 
+            items: 
+              type: string
+            type: array
+        type: object
+      type: array
+      x-ngsi: 
+        model: "https://schema.org/openingHours"
+        type: Property
+        uri: "https://schema.org/openingHours"
+    owner: 
+      description: "The owner of this building"
+      format: URL
+      type: string
+      x-ngsi: 
+        model: "https://schema.org/URL"
+        type: Relationship
+    refMap: 
+      description: "The URL holding a map of the building"
+      format: URL
+      type: string
+      x-ngsi: 
+        model: "https://schema.org/URL"
+        type: Property
+    source: 
+      description: "A sequence of characters giving the source of the entity data."
+      type: string
+      x-ngsi: 
+        model: 
+          - "https://schema.org/Text"
+          - "https://schema.org/URL"
+        type: Property
   required: 
-    - dyspnoea
-    - cough
-    - anosmia
-    - contactCovid
-    - diarrhea
+    - address
+    - category
   type: object
+Categories: 
+  $ref: "https://fiware.github.io/tutorials.NGSI-LD/models/openstreetmap.yaml#/Categories"
