@@ -78,7 +78,7 @@
       "@id": "schema:Person",
       "@type": "rdfs:Class",
       "http://purl.org.dc/terms/source": {
-        "@id": http://w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews"
+        "@id": "http://w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews"
       },
       "http://www.w3.org/2002/07/owl#equivalentClass": {
         "@id": "http://xmlns.com/foaf/0.1/Person"
@@ -91,7 +91,7 @@
     },
     {
       "@id": "smacovidbase:isOwnedBy",
-      "@type": https://uri.etsi.org/ngsi-ld/Relationship",
+      "@type": "https://uri.etsi.org/ngsi-ld/Relationship",
       "schema:domainIncludes": [
         {
           "@id": "smacovidbase:Wearable"
@@ -107,7 +107,7 @@
     },
     {
       "@id": "smacovidbase:hasInfoAbout",
-      "@type": https://uri.etsi.org/ngsi-ld/Relationship",
+      "@type": "https://uri.etsi.org/ngsi-ld/Relationship",
       "schema:domainIncludes": [
         {
           "@id": "smacovidbase:App"
@@ -120,6 +120,6 @@
       ],
       "rdfs:comment": "Person using the App at the moment",
       "rdfs:label": "hasInfoAbout"
-    },
+    }
   ]
 }
