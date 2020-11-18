@@ -40,15 +40,15 @@
     },
     "cough": {
       "@id": "smacovidbase:cough",
-      "@type":"xsd: boolean"
+      "@type":"xsd:boolean"
     },
     "anosmia": {
       "@id": "smacovidbase:anosmia",
-      "@type":"xsd: boolean"
+      "@type":"xsd:boolean"
     },
     "contactCovid": {
       "@id": "smacovidbase:contactCovid",
-      "@type":"xsd: boolean"
+      "@type":"xsd:boolean"
     },
     "diarrhea": {
       "@id": "smacovidbase:diarrhea",
