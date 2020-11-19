@@ -11,7 +11,7 @@
     "Person": "schema:Person",
     "address": "schema:address",    
     "isOwnedBy": {
-      "@id": "smacovidbase:isOwnedBy",
+      "@id": "https://github.com/rui-vp-fernandes/Fiware/blob/master/main/isOwnedBy",
       "@type":"@id"
     },
     "bloodPressure": {
@@ -31,7 +31,7 @@
       "@type":"xsd:integer"
     },
     "hasInfoAbout": {
-      "@id": "smacovidbase:hasInfoAbout",
+      "@id": "https://github.com/rui-vp-fernandes/Fiware/blob/master/main/hasInfoAbout",
       "@type":"@id"
     },
     "dyspnoea": {
@@ -90,7 +90,7 @@
       }
     },
     {
-      "@id": "smacovidbase:isOwnedBy",
+      "@id": "https://github.com/rui-vp-fernandes/Fiware/blob/master/main/isOwnedBy",
       "@type": "https://uri.etsi.org/ngsi-ld/Relationship",
       "schema:domainIncludes": [
         {
@@ -106,7 +106,7 @@
       "rdfs:label": "isOwnedBy"
     },
     {
-      "@id": "smacovidbase:hasInfoAbout",
+      "@id": "https://github.com/rui-vp-fernandes/Fiware/blob/master/main/hasInfoAbout",
       "@type": "https://uri.etsi.org/ngsi-ld/Relationship",
       "schema:domainIncludes": [
         {
