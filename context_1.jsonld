@@ -1,0 +1,125 @@
+{
+  "@context": {
+    "type": "@type",
+    "id":"@id",
+    "schema": "https://schema.org/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "smacovidbase": "https://github.com/rui-vp-fernandes/Fiware/blob/master/main/",
+    "Wearable": "smacovidbase:Wearable",
+    "App": "smacovidbase:App",
+    "Person": "schema:Person",
+    "address": "schema:address",    
+    "isOwnedBy": {
+      "@id": "smacovidbase:isOwnedBy",
+      "@type":"@id"
+    },
+    "bloodPressure": {
+      "@id": "smacovidbase:bloodPressure",
+      "@type":"xsd:integer"
+    },
+    "oxygenSaturation": {
+      "@id": "smacovidbase:oxygenSaturation",
+      "@type":"xsd:integer"
+    },
+    "temperature": {
+      "@id": "smacovidbase:temperature",
+      "@type":"xsd:double"
+    },
+    "heartRate": {
+      "@id": "smacovidbase:heartRate",
+      "@type":"xsd:integer"
+    },
+    "hasInfoAbout": {
+      "@id": "smacovidbase:hasInfoAbout",
+      "@type":"@id"
+    },
+    "dyspnoea": {
+      "@id": "smacovidbase:dyspnoea",
+      "@type":"xsd:boolean"
+    },
+    "cough": {
+      "@id": "smacovidbase:cough",
+      "@type":"xsd:boolean"
+    },
+    "anosmia": {
+      "@id": "smacovidbase:anosmia",
+      "@type":"xsd:boolean"
+    },
+    "contactCovid": {
+      "@id": "smacovidbase:contactCovid",
+      "@type":"xsd:boolean"
+    },
+    "diarrhea": {
+      "@id": "smacovidbase:diarrhea",
+      "@type":"xsd:integer"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "smacovidbase:Wearable",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A Wearable is a unit that contains measuring sensors",
+      "rdfs:label": "Wearable",
+      "rdfs:subClassOf": {
+        "@id": "http://schema.org/Thing"
+      }
+    },
+    {
+      "@id": "smacovidbase:App",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An App is an information provider about about characteristics of its user",
+      "rdfs:label": "App",
+      "rdfs:subClassOf": {
+        "@id": "http://schema.org/Thing"
+      }
+    },
+    {
+      "@id": "schema:Person",
+      "@type": "rdfs:Class",
+      "http://purl.org.dc/terms/source": {
+        "@id": "http://w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews"
+      },
+      "http://www.w3.org/2002/07/owl#equivalentClass": {
+        "@id": "http://xmlns.com/foaf/0.1/Person"
+      },
+      "rdfs:comment": "A person...",
+      "rdfs:label": "Person",
+      "rdfs:subClassOf": {
+        "@id": "http://schema.org/Thing"
+      }
+    },
+    {
+      "@id": "smacovidbase:isOwnedBy",
+      "@type": "https://uri.etsi.org/ngsi-ld/Relationship",
+      "schema:domainIncludes": [
+        {
+          "@id": "smacovidbase:Wearable"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rdfs:comment": "Person who is using the wearable at the moment",
+      "rdfs:label": "isOwnedBy"
+    },
+    {
+      "@id": "smacovidbase:hasInfoAbout",
+      "@type": "https://uri.etsi.org/ngsi-ld/Relationship",
+      "schema:domainIncludes": [
+        {
+          "@id": "smacovidbase:App"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rdfs:comment": "Person using the App at the moment",
+      "rdfs:label": "hasInfoAbout"
+    }
+  ]
+}
