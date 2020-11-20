@@ -9,7 +9,8 @@
     "Wearable": "smacovidbase:Wearable",
     "App": "smacovidbase:App",
     "Person": "schema:Person",
-    "address": "schema:address",    
+    "address": "schema:address",
+    "observedAt": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/observedAt",
     "isOwnedBy": {
       "@id": "smacovidbase:isOwnedBy",
       "@type":"@id"
